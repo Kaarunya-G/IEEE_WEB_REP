@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+	<TITLE>CMF TECH</TITLE>
+</HEAD>
+<BODY style="background-color: skyblue; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+	<div  style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
+		<div class="login-box" style="width: 300px; background-color: lightblue; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); color: white; padding: 20px; text-align: center; border-radius: 8px;">
+			<h2>Login</h2>
+			<form>
+				<p align="left"><label for="username">Username</label></p>
+				<p><input type="text" id="username" name="username" required style="width: 100%;  padding: 10px; margin: 8px 0; box-sizing: border-box;"></p>
+				<p align="left"><label for="password">Password</label></p>
+				<p><input type="password" id="password" name="password" required style="width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; "></p>
+				<p><button type="submit" style="width: 100%; padding: 10px; background-color: darkturquoise; color: white; border: none; cursor: pointer; border-radius: 4px;">Login</button></p>
+				<p><a href="#" id="forgot-password-link" style="color: white; text-decoration: none; display: block; margin-top: 10px; cursor: pointer;">Forgot your password?</a></p>
+			</form>
+		</div>
+	</div>
+
+	<div id="reset-password-chng" class="chng" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4); justify-content: center; align-items: center;">
+		<div class="chng-content" style="background-color: #cfe2f3; padding: 20px; border-radius: 8px; width: 300px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); text-align: center;">
+			<h3 style="color: darkblue; margin-bottom: 10px;">Reset Password</h3>
+			<p style="color: black; margin-bottom: 15px;">Please enter your new password below to reset it.</p>
+			<form>
+				<p align="left"><label for="new-password">New Password</label></p>
+				<p><input type="password" id="new-password" name="new-password" required style="width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;"></p>
+				<p><button type="button" id="reset-password-btn" style="width: 100%; padding: 10px; background-color: darkblue; color: white; border: none; cursor: pointer; border-radius: 4px;">Reset Password</button></p>
+			</form>
+		</div>
+	</div>
+
+	<script>
+		var chng = document.getElementById("reset-password-chng");
+		var forgotPasswordLink = document.getElementById("forgot-password-link");
+		var resetPasswordBtn = document.getElementById("reset-password-btn");
+
+		forgotPasswordLink.onclick = function(event) {
+			event.preventDefault();
+			chng.style.display = "flex";
+		}
+
+		resetPasswordBtn.onclick = function() {
+			alert("Password reset successfully!");
+			chng.style.display = "none";
+		}
+
+		window.onclick = function(event) {
+			if (event.target == chng) {
+				chng.style.display = "none";
+			}
+		}
+	</script>
+</BODY>
+</HTML>
